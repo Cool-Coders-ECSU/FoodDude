@@ -1,88 +1,150 @@
 package fooddude;
-
 import java.util.Scanner;
-import java.text.DecimalFormat;
-
-
-
-
-public class Main {
+/**
+ *
+ * @author drcouncil
+ */
+public class Menu {
     
-    private static DecimalFormat df2 = new DecimalFormat(".00");
-    
-    public static void main(String args[])
+    private String key;
+    private Menu next;
+    private int count; 
+   
+    Menu()
     {
-        double price=0;// Saved amount for customer
-        double tax =0.05; 
-        char choice = 'y';// decision from customer
-     
-        Menu t = new Menu();
-        //Prompt user for which type of meal
-    System.out.println("Hello, thanks for coming to eat at FoodDude choose from Dinner, Dessert, and Breakfast:");
-     
-    Scanner scan = new Scanner(System.in);
-    String input = scan.nextLine();
-  
-    
-    
-    System.out.print("Your input - " + input.toUpperCase() +"\n" );
-    
-        
-    
-    //PASS STRING TO MENU CLASS AND DISPLAY MENU
-    if (input.toUpperCase() == "BREAKFAST")
-    {
-    System.out.println("\n\tBREAKFAST MENU\n ------------------------------------");
-        t.BreakfastMenu();
-        System.out.println("\nChoose from the list above which number you will like: \n (choose 0 to exit)");
-        
-        }
-       //---------------------------------------------------------------------------------------------- 
-    
-    
-        else if(input.toUpperCase() == "DINNER")
-        {
-            System.out.println("\n\tDINNER MENU\n ----------------------------------");
-        t.DinnerMenu();
-        System.out.println("\nChoose from the list above which number you will like: \n (Choose 0 to exit)");
-        }
-       //------------------------------------------------------------------------------------------------
-        
-        
-        else if(input.toUpperCase() == "DESSERT")
-        {
-    System.out.println("\n\tDESSERT MENU\n ------------------------------------");
-        t.DessertMenu();
-        
-        double n;
-        System.out.println("\nChoose from the list above which number you will like: \n (choose 0 to exit)");
-          n = scan.nextDouble();
-          //System.out.println("You enter " + n + " --");
-        
-        
-        System.out.println("Your total is $"+df2.format(t.Dessert(n)));
-       //price += t.Dessert(n);
-       
-        }
-      //-----------------------------------------------------------------------------------------------------------
-        
-        
-        
-        
-        
-        else
-        { System.out.print("Sorry, please just enter in 'Breakfast', 'Dinner', or 'Dessert'. \n");
-        }
-    
-    
-     System.out.println("Is there anything else you will like to add on your order? [y/n] ");
-     
-    
-    
-    
-    
+        count ++;
     
     }
     
-}
+    public void setNext(Menu n)
+    { next = n; }
+    
+    // Print out dessert menu and price Hashtable
+    public void DessertMenu()
+    {System.out.println(" 1. Cinnamon bun\n 2. Peach Cobbler\n 3. Chocolate Ice-cream\n 4. Apple Pie");
+    }
+    
+    public void BreakfastMenu()
+    {System.out.println(" 1. Steak Omelette\t 3. Breakfast Sampler\n 2. Original Buttermilk Pancakes\t 5. Blueberry Pancakes\n"
+            + " 4.Classic Breakfast\t 7.Chicken & Waffles\n 6. Ham & Egg Melt\t 8.Turkey, Bacon & Egg Wrap\n");
+    }
+    
+    public void DinnerMenu()
+    {System.out.println(" 1. Chicken Tenders\t 3. T-Bone Steak\n 2. Ribs\t 5. Grilled BBQ Chicken\n"
+        + " 4.Steak & Shrimp Combo\t 7.Shrimp Alfredo\n 6. Smoked House Burger\t 8.Classic Cheesburger\n");
+    }
+    
+    
+    
+    public double Dessert(double n)
+    { double value;
+    double total = 0;
+    
+    int quantity;
+    Scanner scan = new Scanner(System.in);
+    
+   // System.out.println("You choosed this " + n);
+      if(n==1)
+      {
+     value = 1.05; 
+     System.out.println("Cinnamon bun is $" + value+ " plus tax "); 
+     System.out.println("How many will you like?");
+     quantity = scan.nextInt();
+     
+     if(quantity>0)
+     {
+      total = (quantity * value);
+     }
+     else if(quantity == 0)
+     {
+     System.out.println("Going Back");
+     }
+     else 
+     {
+         System.out.println("Wrong Input");
+     }
+     
+   }
+      //----------------------------------------choice one
+      //--------------------------------------------------
+      
+      else if(n==2)
+      {
+     value = 1.45; 
+     System.out.println("Peach Cobbler is $" + value+ " plus tax "); 
+     System.out.println("How many will you like?");
+     quantity = scan.nextInt();
+     
+     if(quantity>0)
+     {
+      total = (quantity * value);
+     }
+     else if(quantity == 0)
+     {
+     System.out.println("Going Back");
+     }
+     else 
+     {
+         System.out.println("Wrong Input");
+     }
+     
+   }
+      //--------------------------------------------choice two
+      //------------------------------------------------------
+      
+      else if(n==3)
+      {
+     value = .99; 
+     System.out.println("Chocolate Ice-Cream is $" + value+ " plus tax "); 
+     System.out.println("How many will you like?");
+     quantity = scan.nextInt();
+     
+     if(quantity>0)
+     {
+      total = (quantity * value);
+     }
+     else if(quantity == 0)
+     {
+     System.out.println("Going Back");
+     }
+     else 
+     {
+         System.out.println("Wrong Input");
+     }
+     
+   }
+     //-----------------------------------------choice three
+      //-------------------------------------------------------
+      
+      else if(n==4)
+      {
+     value = 1.35; 
+     System.out.println("Apple Pie is $" + value+ " plus tax "); 
+     System.out.println("How many will you like?");
+     quantity = scan.nextInt();
+     
+     if(quantity>0)
+     {
+      total = (quantity * value);
+     }
+     else if(quantity == 0)
+     {
+     System.out.println("Going Back");
+     }
+     else 
+     {
+         System.out.println("Wrong Input");
+     }
+     
+   }
+      
+      
+      
+      
+    return total;
+    }
 
+
+
+}
+    
