@@ -31,7 +31,7 @@ public class Main {
     System.out.print("Your input - " + input.toUpperCase() +"\n" );
     
         
-    do{
+   // do{
     //PASS STRING TO MENU CLASS AND DISPLAY MENU
     if (input.toUpperCase() == breakfast)
     {
@@ -47,7 +47,7 @@ public class Main {
         {
             System.out.println("\n\tDINNER MENU\n ----------------------------------");
         t.DinnerMenu();
-        System.out.println("\nCgoose from the list above which number you will like: \n (Choose 0 to exit)");
+        System.out.println("\nChoose from the list above which number you will like: \n (Choose 0 to exit)");
         }
        //------------------------------------------------------------------------------------------------
         
@@ -80,7 +80,7 @@ public class Main {
     
      System.out.println("Is there anything else you will like to add on your order? [y/n] ");
      
-             choice = scan.next().charAt(0);
+            /* choice = scan.next().charAt(0);
              if (choice == 'y')
              {
              System.out.println("What whould you like? ");
@@ -89,7 +89,7 @@ public class Main {
              
     }
      while(choice=='y');
-    
+    */
     
     
     
