@@ -20,7 +20,7 @@ import javax.swing.*;
  */
 public class Main extends JPanel {
     ImageIcon[] images;
-    String[] entree = {"Bird", "Cat", "Dog", "Rabbit", "Pig"};
+    String[] entree = {"Burger", "Cat", "Dog", "Rabbit", "Pig"};
  
     /*
      * Despite its use of EmptyBorder, this panel makes a fine content
