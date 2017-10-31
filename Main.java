@@ -20,7 +20,7 @@ import javax.swing.*;
  */
 public class Main extends JPanel {
     ImageIcon[] images;
-    String[] entree = {"Burger", "Steak", "Chicken", "Rabbit", "Pig"};
+    String[] entree = {"Burger", "Steak", "Dog", "Rabbit", "Pig"};
  
     /*
      * Despite its use of EmptyBorder, this panel makes a fine content
@@ -35,21 +35,21 @@ public class Main extends JPanel {
  
         //Load the pet images and create an array of indexes.
         images = new ImageIcon[entree.length];
-        Integer[] intArray = new Integer[.length];
+        Integer[] intArray = new Integer[entree.length];
         Integer[] intArray2 = new Integer[entree.length];
-        for (int i = 0; i < petStrings.length; i++) {
+        for (int i = 0; i < entree.length; i++) {
             intArray[i] = new Integer(i);
             images[i] = createImageIcon("images/" + petStrings[i] + ".gif");
             if (images[i] != null) {
-                images[i].setDescription(petStrings[i]);
+                images[i].setDescription(entree[i]);
             }
         }
         
-         for (int i = 0; i < petStrings.length; i++) {
+         for (int i = 0; i < entree.length; i++) {
             intArray2[i] = new Integer(i);
-            images[i] = createImageIcon("images/" + petStrings[i] + ".gif");
+            images[i] = createImageIcon("images/" + entree[i] + ".gif");
             if (images[i] != null) {
-                images[i].setDescription(petStrings[i]);
+                images[i].setDescription(entree[i]);
             }
         }
         
