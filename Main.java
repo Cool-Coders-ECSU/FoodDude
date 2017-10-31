@@ -20,7 +20,7 @@ import javax.swing.*;
  */
 public class Main extends JPanel {
     ImageIcon[] images;
-    String[] petStrings = {"Bird", "Cat", "Dog", "Rabbit", "Pig"};
+    String[] entree = {"Bird", "Cat", "Dog", "Rabbit", "Pig"};
  
     /*
      * Despite its use of EmptyBorder, this panel makes a fine content
@@ -34,9 +34,9 @@ public class Main extends JPanel {
         super(new BorderLayout());
  
         //Load the pet images and create an array of indexes.
-        images = new ImageIcon[petStrings.length];
-        Integer[] intArray = new Integer[petStrings.length];
-        Integer[] intArray2 = new Integer[petStrings.length];
+        images = new ImageIcon[entree.length];
+        Integer[] intArray = new Integer[.length];
+        Integer[] intArray2 = new Integer[entree.length];
         for (int i = 0; i < petStrings.length; i++) {
             intArray[i] = new Integer(i);
             images[i] = createImageIcon("images/" + petStrings[i] + ".gif");
