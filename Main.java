@@ -1,4 +1,4 @@
-package components;
+package FoodDude;
  
 import java.awt.*;
 import java.awt.event.*;
@@ -16,16 +16,19 @@ public class Food extends JPanel {
  
         //Load the pet images and create an array of indexes.
         images = new ImageIcon[entree.length];
-        Integer[] intArray = new Integer[entree.length];
-		Integer[] intArray2 = new Integer[sides.length];
+        
+        
+    Integer[] intArray = new Integer[entree.length];
+    Integer[] intArray2 = new Integer[sides.length];
 		
-        for (int i = 0; i < entree.length; i++) {
+      for (int i = 0; i < entree.length; i++) {
             intArray[i] = new Integer(i);
             images[i] = createImageIcon("images/" + entree[i] + ".gif");
             if (images[i] != null) {
                 images[i].setDescription(entree[i]);
             }
         }
+        
 		
 		 for (int i = 0; i < sides.length; i++) {
             intArray2[i] = new Integer(i);
@@ -40,13 +43,13 @@ public class Food extends JPanel {
         ComboBoxRenderer renderer= new ComboBoxRenderer();
         renderer.setPreferredSize(new Dimension(200, 130));
         entree.setRenderer(renderer);
-        entree.setMaximumRowCount(3);
+        entree.setMaximumRowCount(8);
 		
 		JComboBox sides = new JComboBox(intArray2);
         ComboBoxRenderer renderer1= new ComboBoxRenderer();
         renderer1.setPreferredSize(new Dimension(200, 130));
         sides.setRenderer(renderer1);
-        sides.setMaximumRowCount(3);
+        sides.setMaximumRowCount(8);
  
         //Lay out the demo.
         add(entree,BorderLayout.PAGE_START);
@@ -59,7 +62,7 @@ public class Food extends JPanel {
  
     /** Returns an ImageIcon, or null if the path was invalid. */
     protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = FoodDude.class.getResource(path);
+        java.net.URL imgURL = Food.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
@@ -79,7 +82,7 @@ public class Food extends JPanel {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         //Create and set up the content pane.
-        JComponent newContentPane = new CustomComboBox();
+        JComponent newContentPane = new Food();
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
  
