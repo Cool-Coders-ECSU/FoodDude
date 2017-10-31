@@ -1,90 +1,65 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package fooddude;
-
-  import java.awt.*;
+package components;
+ 
+import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
  
 
- 
-/*
- * CustomComboBoxDemo.java uses the following files:
- *   images/Bird.gif
- *   images/Cat.gif
- *   images/Dog.gif
- *   images/Rabbit.gif
- *   images/Pig.gif
- */
-public class Main extends JPanel {
+
+public class Food extends JPanel {
     ImageIcon[] images;
-    String[] entree = {"Burger", "Steak", "Dog", "Rabbit", "Pig"};
+    String[] entree = {"Burger", "Steak", "Ribs", "Wings", "PorkChop"};
+	String[] sides= {"Fries","Onion Rings", "Mash Potatoes", "Green Beans","Mac&Cheese"};
  
-    /*
-     * Despite its use of EmptyBorder, this panel makes a fine content
-     * pane because the empty border just increases the panel's size
-     * and is "painted" on top of the panel's normal background.  In
-     * other words, the JPanel fills its entire background if it's
-     * opaque (which it is by default); adding a border doesn't change
-     * that.
-     */
-    public Main() {
+    public Food() {
         super(new BorderLayout());
  
         //Load the pet images and create an array of indexes.
         images = new ImageIcon[entree.length];
         Integer[] intArray = new Integer[entree.length];
-        Integer[] intArray2 = new Integer[entree.length];
+		Integer[] intArray2 = new Integer[sides.length];
+		
         for (int i = 0; i < entree.length; i++) {
             intArray[i] = new Integer(i);
-            images[i] = createImageIcon("images/" + petStrings[i] + ".gif");
-            if (images[i] != null) {
-                images[i].setDescription(entree[i]);
-            }
-        }
-        
-         for (int i = 0; i < entree.length; i++) {
-            intArray2[i] = new Integer(i);
             images[i] = createImageIcon("images/" + entree[i] + ".gif");
             if (images[i] != null) {
                 images[i].setDescription(entree[i]);
             }
         }
-        
+		
+		 for (int i = 0; i < sides.length; i++) {
+            intArray2[i] = new Integer(i);
+            images[i] = createImageIcon("images/" + sides[i] + ".gif");
+            if (images[i] != null) {
+                images[i].setDescription(entree[i]);
+            }
+        }
  
         //Create the combo box.
-        JComboBox petList = new JComboBox(intArray);
+        JComboBox entree = new JComboBox(intArray);
         ComboBoxRenderer renderer= new ComboBoxRenderer();
         renderer.setPreferredSize(new Dimension(200, 130));
-        petList.setRenderer(renderer);
-        petList.setMaximumRowCount(8);
-        
-        
-        JComboBox items = new JComboBox(intArray2);
+        entree.setRenderer(renderer);
+        entree.setMaximumRowCount(3);
+		
+		JComboBox sides = new JComboBox(intArray2);
         ComboBoxRenderer renderer1= new ComboBoxRenderer();
         renderer1.setPreferredSize(new Dimension(200, 130));
-        items.setRenderer(renderer1);
-        items.setMaximumRowCount(8);
-        
+        sides.setRenderer(renderer1);
+        sides.setMaximumRowCount(3);
+ 
         //Lay out the demo.
-        add(petList, BorderLayout.PAGE_START);
-        setBorder(BorderFactory.createEmptyBorder(10,10,20,20));
-        
-        
-         add(items, BorderLayout.EAST);
+        add(entree,BorderLayout.PAGE_START);
         setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
-        
-        
-        
-        
+		
+		add(sides,BorderLayout.EAST);
+        setBorder(BorderFactory.createEmptyBorder(20,20,20,20));
+		
     }
  
-    
     /** Returns an ImageIcon, or null if the path was invalid. */
     protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = Main.class.getResource(path);
+        java.net.URL imgURL = FoodDude.class.getResource(path);
         if (imgURL != null) {
             return new ImageIcon(imgURL);
         } else {
@@ -100,11 +75,11 @@ public class Main extends JPanel {
      */
     private static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("CustomComboBoxDemo");
+        JFrame frame = new JFrame("FoodDude");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
  
         //Create and set up the content pane.
-        JComponent newContentPane = new Main();
+        JComponent newContentPane = new CustomComboBox();
         newContentPane.setOpaque(true); //content panes must be opaque
         frame.setContentPane(newContentPane);
  
@@ -158,7 +133,7 @@ public class Main extends JPanel {
  
             //Set the icon and text.  If icon was null, say so.
             ImageIcon icon = images[selectedIndex];
-            String pet = petStrings[selectedIndex];
+            String pet = entree[selectedIndex];
             setIcon(icon);
             if (icon != null) {
                 setText(pet);
