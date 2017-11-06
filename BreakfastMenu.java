@@ -55,7 +55,7 @@ mystate =myrun.createStatement();
 
     
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    
     private void initComponents() {
 
         item1 = new javax.swing.JComboBox<>();
@@ -195,7 +195,7 @@ mystate =myrun.createStatement();
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
     protected static ImageIcon createImageIcon(String path)
     {
@@ -211,10 +211,10 @@ mystate =myrun.createStatement();
     private void item1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_item1ActionPerformed
         
        
-    }//GEN-LAST:event_item1ActionPerformed
+    }
 
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
+        
         
         try{
             // Get info from GUI
@@ -249,7 +249,7 @@ mystate =myrun.createStatement();
     
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
 System.exit(0);        // TODO add your handling code here:
-    }//GEN-LAST:event_exitButtonActionPerformed
+    }
 
     /**
      * @param args the command line arguments
@@ -272,7 +272,7 @@ System.exit(0);        // TODO add your handling code here:
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(BreakfastMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -282,7 +282,7 @@ System.exit(0);        // TODO add your handling code here:
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration 
     private javax.swing.JList<String> DrinkList;
     private javax.swing.JLabel DrinksLabel;
     private javax.swing.JTextField IDnum;
