@@ -20,6 +20,11 @@ import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 /**
  *
@@ -27,16 +32,14 @@ import java.awt.event.WindowEvent;
  */
 public class MenuPrompt extends javax.swing.JFrame {
  
-    /**
-     * Creates new form MenuPrompt
-     */
+    
     public MenuPrompt() {
         initComponents();
     }
  
     
     @SuppressWarnings("unchecked")
-  
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jInternalFrame1 = new javax.swing.JInternalFrame();
@@ -46,15 +49,11 @@ public class MenuPrompt extends javax.swing.JFrame {
         jPopupMenu3 = new javax.swing.JPopupMenu();
         jPopupMenu4 = new javax.swing.JPopupMenu();
         jPopupMenu5 = new javax.swing.JPopupMenu();
-        jInternalFrame2 = new javax.swing.JInternalFrame();
-        thHeader1 = new java.awt.Label();
-        jLabel1 = new javax.swing.JLabel();
-        jButBreakfast = new javax.swing.JButton();
-        jButLunch = new javax.swing.JButton();
-        jButDinner = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
-        jbutExit = new javax.swing.JButton();
+        BreakfastButton = new javax.swing.JButton();
+        LunchButton = new javax.swing.JButton();
+        DinnerButton = new javax.swing.JButton();
+        Tiitle = new javax.swing.JLabel();
+        Background = new javax.swing.JLabel();
 
         jInternalFrame1.setVisible(true);
 
@@ -73,146 +72,63 @@ public class MenuPrompt extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 0, 0));
+        setMinimumSize(new java.awt.Dimension(500, 380));
+        getContentPane().setLayout(null);
 
-        jInternalFrame2.setVisible(true);
-
-        thHeader1.setAlignment(java.awt.Label.CENTER);
-        thHeader1.setFont(new java.awt.Font("Gadugi", 1, 24)); // NOI18N
-        thHeader1.setName(""); // NOI18N
-        thHeader1.setText("Welcome To FoodDude!");
-
-        jLabel1.setFont(new java.awt.Font("Gadugi", 1, 14)); // NOI18N
-        jLabel1.setText("Today's Speacials:");
-
-        jButBreakfast.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButBreakfast.setForeground(new java.awt.Color(204, 0, 51));
-        jButBreakfast.setText("Breakfast");
-        jButBreakfast.addActionListener(new java.awt.event.ActionListener() {
+        BreakfastButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        BreakfastButton.setForeground(new java.awt.Color(204, 0, 51));
+        BreakfastButton.setText("Breakfast");
+        BreakfastButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButBreakfastActionPerformed(evt);
+                BreakfastButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(BreakfastButton);
+        BreakfastButton.setBounds(80, 190, 140, 30);
 
-        jButLunch.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButLunch.setForeground(new java.awt.Color(204, 0, 51));
-        jButLunch.setText("Lunch");
+        LunchButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        LunchButton.setForeground(new java.awt.Color(204, 0, 51));
+        LunchButton.setText("Lunch");
+        getContentPane().add(LunchButton);
+        LunchButton.setBounds(320, 190, 140, 30);
 
-        jButDinner.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
-        jButDinner.setForeground(new java.awt.Color(204, 0, 51));
-        jButDinner.setText("Dinner");
+        DinnerButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        DinnerButton.setForeground(new java.awt.Color(204, 0, 51));
+        DinnerButton.setText("Dinner");
+        getContentPane().add(DinnerButton);
+        DinnerButton.setBounds(200, 270, 140, 30);
 
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        Tiitle.setFont(new java.awt.Font("Segoe UI", 3, 30)); // NOI18N
+        Tiitle.setForeground(new java.awt.Color(204, 0, 51));
+        Tiitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Tiitle.setText("Welcome to FoodDude!");
+        getContentPane().add(Tiitle);
+        Tiitle.setBounds(40, 24, 440, 50);
 
-        jTextArea1.setBackground(new java.awt.Color(240, 240, 240));
-        jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI Emoji", 3, 13)); // NOI18N
-        jTextArea1.setRows(5);
-        jTextArea1.setText("Burger Combo\n\nSmall Ice Cream\n\nBeef Burito\n\nTurkey Salad");
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jbutExit.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jbutExit.setText("EXIT");
-        jbutExit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jbutExitActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jInternalFrame2Layout = new javax.swing.GroupLayout(jInternalFrame2.getContentPane());
-        jInternalFrame2.getContentPane().setLayout(jInternalFrame2Layout);
-        jInternalFrame2Layout.setHorizontalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addGap(8, 8, 8)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(thHeader1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame2Layout.createSequentialGroup()
-                                .addComponent(jButBreakfast, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 124, Short.MAX_VALUE)
-                                .addComponent(jButLunch, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addGap(146, 146, 146)
-                        .addComponent(jButDinner, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jInternalFrame2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jbutExit, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-        );
-        jInternalFrame2Layout.setVerticalGroup(
-            jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jInternalFrame2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(thHeader1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(106, 106, 106)
-                .addGroup(jInternalFrame2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButBreakfast, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
-                    .addComponent(jButLunch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButDinner, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jbutExit, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28))
-        );
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jInternalFrame2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
-        );
+        Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simple_green-HD[1].jpg"))); // NOI18N
+        Background.setText("jLabel3");
+        Background.setPreferredSize(new java.awt.Dimension(1958, 1080));
+        getContentPane().add(Background);
+        Background.setBounds(0, 0, 520, 480);
 
         pack();
-    }
+    }// </editor-fold>//GEN-END:initComponents
 
-    private void jButBreakfastActionPerformed(java.awt.event.ActionEvent evt) {
-
+    private void BreakfastButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BreakfastButtonActionPerformed
 BreakfastMenu Info = new BreakfastMenu();
 Info.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_BreakfastButtonActionPerformed
 
 
-        
-    }
-
-    private void jbutExitActionPerformed(java.awt.event.ActionEvent evt) {
-        
-        System.exit(0);
-    }
-
-
-    /**
-     * @param args the command line arguments
-     */
+    
     public static void main(String args[]) {
-        
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -242,22 +158,18 @@ Info.setVisible(true);
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButBreakfast;
-    private javax.swing.JButton jButDinner;
-    private javax.swing.JButton jButLunch;
+    private javax.swing.JLabel Background;
+    private javax.swing.JButton BreakfastButton;
+    private javax.swing.JButton DinnerButton;
+    private javax.swing.JButton LunchButton;
+    private javax.swing.JLabel Tiitle;
     private javax.swing.JCheckBoxMenuItem jCheckBoxMenuItem1;
     private javax.swing.JInternalFrame jInternalFrame1;
-    private javax.swing.JInternalFrame jInternalFrame2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JPopupMenu jPopupMenu2;
     private javax.swing.JPopupMenu jPopupMenu3;
     private javax.swing.JPopupMenu jPopupMenu4;
     private javax.swing.JPopupMenu jPopupMenu5;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JButton jbutExit;
-    private java.awt.Label thHeader1;
     // End of variables declaration//GEN-END:variables
 
 
