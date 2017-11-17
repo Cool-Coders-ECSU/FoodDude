@@ -61,13 +61,16 @@ mystate =myrun.createStatement();
     private void initComponents() {
 
         Entree = new javax.swing.JComboBox();
-        jLabel2 = new javax.swing.JLabel();
         addButton = new javax.swing.JButton();
-        exitButton = new javax.swing.JButton();
         WaitressButton = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
+        exitButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBounds(new java.awt.Rectangle(0, 0, 340, 340));
+        setUndecorated(true);
+        getContentPane().setLayout(null);
 
         Entree.setMaximumRowCount(14);
         Entree.setModel(loadImages());
@@ -79,12 +82,8 @@ mystate =myrun.createStatement();
                 EntreeActionPerformed(evt);
             }
         });
-
-        jLabel2.setFont(new java.awt.Font("Segoe UI Black", 1, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 0, 51));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Breakfast Menu:");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        getContentPane().add(Entree);
+        Entree.setBounds(20, 270, 250, 210);
 
         addButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         addButton.setText("Done");
@@ -94,17 +93,10 @@ mystate =myrun.createStatement();
                 addButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(addButton);
+        addButton.setBounds(530, 20, 140, 37);
 
-        exitButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        exitButton.setText("Back");
-        exitButton.setPreferredSize(new java.awt.Dimension(153, 37));
-        exitButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                exitButtonActionPerformed(evt);
-            }
-        });
-
-        WaitressButton.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        WaitressButton.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         WaitressButton.setForeground(new java.awt.Color(204, 0, 51));
         WaitressButton.setText("Need Waitress?");
         WaitressButton.setAutoscrolls(true);
@@ -114,58 +106,106 @@ mystate =myrun.createStatement();
                 WaitressButtonActionPerformed(evt);
             }
         });
+        getContentPane().add(WaitressButton);
+        WaitressButton.setBounds(530, 120, 140, 37);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "D R I N K S", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 24))); // NOI18N
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(400, 270, 270, 210);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(179, 179, 179)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 713, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 145, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(Entree, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(113, 113, 113)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(WaitressButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(exitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(addButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(88, 88, 88)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Entree, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(WaitressButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 70, Short.MAX_VALUE))
-        );
+        exitButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        exitButton.setText("Back");
+        exitButton.setPreferredSize(new java.awt.Dimension(153, 37));
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(exitButton);
+        exitButton.setBounds(10, 20, 100, 37);
+
+        jLabel2.setBackground(new java.awt.Color(0, 0, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/T6yypye[1].jpg"))); // NOI18N
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(0, 10, 720, 480);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void WaitressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WaitressButtonActionPerformed
+        JOptionPane.showMessageDialog(null," A waitress is on the way!");        // TODO add your handling code here:
+    }//GEN-LAST:event_WaitressButtonActionPerformed
+
+    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
+        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(null,"Thanks, Your order will be out shortly!");
+
+        /** try{
+            // Get info from GUI
+            String sql = "Insert into Ticket (ID,Item1,Item2,Item3,Item4,Drinks)" +" values (?,?,?,?,?,?)";
+            myrun = DriverManager.getConnection("jdbc:derby://localhost:1527/FoodDude_DB","Davion","drcouncil");
+            PreparedStatement stm = myrun.prepareStatement(sql);
+            stm.setString(1, IDnum.getText());
+
+            String num1= item1.getSelectedItem().toString();
+            stm.setString(2, num1);
+
+            String num2= item2.getSelectedItem().toString();
+            stm.setString(3, num2);
+
+            String num3= item3.getSelectedItem().toString();
+            stm.setString(4, num3);
+
+            String num4= item4.getSelectedItem().toString();
+            stm.setString(5, num4);
+
+            //String num2= .getSelectedItem().toString();
+            //stm.setString(6, drink.getText());
+
+            //stm = myrun.prepareStatement(sql);
+
+            stm.execute();
+
+            pst.setString(1)
+            String id = IDnum.getText();
+            String num1= item1.getSelectedItem().toString();
+            String num2= item2.getSelectedItem().toString();
+            String num3= item3.getSelectedItem().toString();
+            String num4= item4.getSelectedItem().toString();
+            String drink= DrinkList.getSelectedValue();
+            **/
+
+            // Add info to sql database .. (column number, variable that holds txt)
+
+            /**add.setString(1,id);
+            add.setString(2, num1);
+            add.setString(3, num2);
+            add.setString(4, num3);
+            add.setString(5, num4);
+            add.setString(6, drink);
+
+            int row = add.executeUpdate();
+
+        }
+        catch(SQLException e)
+        {
+            e.printStackTrace();
+        }**/
+    }//GEN-LAST:event_addButtonActionPerformed
+
+    private void EntreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntreeActionPerformed
+
+    }//GEN-LAST:event_EntreeActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+
+        dispose();
+        new MenuPrompt().setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_exitButtonActionPerformed
 
     
     private DefaultComboBoxModel<Icon> loadImages()
@@ -200,89 +240,8 @@ mystate =myrun.createStatement();
     }
     }
     
-    private void EntreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntreeActionPerformed
-        
-       
-    }//GEN-LAST:event_EntreeActionPerformed
-
-    private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-        // TODO add your handling code here:
-
-            JOptionPane.showMessageDialog(null,"Thanks, Your order will be out shortly!");
-        
-       /** try{
-            // Get info from GUI
-            String sql = "Insert into Ticket (ID,Item1,Item2,Item3,Item4,Drinks)" +" values (?,?,?,?,?,?)";
-            myrun = DriverManager.getConnection("jdbc:derby://localhost:1527/FoodDude_DB","Davion","drcouncil");
-           PreparedStatement stm = myrun.prepareStatement(sql);
-           stm.setString(1, IDnum.getText());
-           
-           String num1= item1.getSelectedItem().toString();
-           stm.setString(2, num1);
-           
-           String num2= item2.getSelectedItem().toString();
-           stm.setString(3, num2);
-           
-           String num3= item3.getSelectedItem().toString();
-           stm.setString(4, num3);
-           
-           String num4= item4.getSelectedItem().toString();
-           stm.setString(5, num4);
-           
-           //String num2= .getSelectedItem().toString();
-           //stm.setString(6, drink.getText());
-           
-           
-          //stm = myrun.prepareStatement(sql);
-          
-          
-            
-            
-            
-            stm.execute();
-            
-           
-            pst.setString(1)
-            String id = IDnum.getText();
-            String num1= item1.getSelectedItem().toString();
-            String num2= item2.getSelectedItem().toString();
-            String num3= item3.getSelectedItem().toString();
-            String num4= item4.getSelectedItem().toString();
-            String drink= DrinkList.getSelectedValue();
-            **/
-        
-        
-        // Add info to sql database .. (column number, variable that holds txt)
-        
-        /**add.setString(1,id);
-        add.setString(2, num1);
-        add.setString(3, num2);
-        add.setString(4, num3);
-        add.setString(5, num4);
-        add.setString(6, drink);
-        
-        int row = add.executeUpdate();
-        
-        }
-        catch(SQLException e)
-        {
-            e.printStackTrace();
-        }**/
-    }//GEN-LAST:event_addButtonActionPerformed
-
     
     
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-
-dispose();
-new MenuPrompt().setVisible(true);
-              // TODO add your handling code here:
-    }//GEN-LAST:event_exitButtonActionPerformed
-
-    private void WaitressButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WaitressButtonActionPerformed
- JOptionPane.showMessageDialog(null," A waitress is on the way!");        // TODO add your handling code here:
-    }//GEN-LAST:event_WaitressButtonActionPerformed
-
     /**
      * @param args the command line arguments
      */
