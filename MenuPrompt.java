@@ -72,6 +72,7 @@ public class MenuPrompt extends javax.swing.JFrame {
         jCheckBoxMenuItem1.setText("jCheckBoxMenuItem1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("CoolCoders");
         setBackground(new java.awt.Color(0, 0, 0));
         setMinimumSize(new java.awt.Dimension(500, 380));
         getContentPane().setLayout(null);
@@ -91,26 +92,34 @@ public class MenuPrompt extends javax.swing.JFrame {
         LunchButton.setForeground(new java.awt.Color(204, 0, 51));
         LunchButton.setText("Lunch");
         getContentPane().add(LunchButton);
-        LunchButton.setBounds(320, 190, 140, 30);
+        LunchButton.setBounds(380, 190, 140, 30);
 
         DinnerButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         DinnerButton.setForeground(new java.awt.Color(204, 0, 51));
         DinnerButton.setText("Dinner");
+        DinnerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DinnerButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(DinnerButton);
-        DinnerButton.setBounds(200, 270, 140, 30);
+        DinnerButton.setBounds(240, 270, 140, 30);
 
         Tiitle.setFont(new java.awt.Font("Segoe UI", 3, 30)); // NOI18N
         Tiitle.setForeground(new java.awt.Color(204, 0, 51));
         Tiitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tiitle.setText("Welcome to FoodDude!");
         getContentPane().add(Tiitle);
-        Tiitle.setBounds(40, 24, 440, 50);
+        Tiitle.setBounds(90, 20, 440, 50);
 
         Background.setIcon(new javax.swing.ImageIcon(getClass().getResource("/simple_green-HD[1].jpg"))); // NOI18N
         Background.setText("jLabel3");
-        Background.setPreferredSize(new java.awt.Dimension(1958, 1080));
+        Background.setMaximumSize(new java.awt.Dimension(960, 960));
+        Background.setMinimumSize(new java.awt.Dimension(480, 480));
+        Background.setPreferredSize(new java.awt.Dimension(600, 600));
         getContentPane().add(Background);
-        Background.setBounds(0, 0, 520, 480);
+        Background.setBounds(0, 0, 730, 940);
+        Background.getAccessibleContext().setAccessibleDescription("");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,6 +129,12 @@ BreakfastMenu Info = new BreakfastMenu();
 Info.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_BreakfastButtonActionPerformed
+
+    private void DinnerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DinnerButtonActionPerformed
+DinnerOrder info = new DinnerOrder();
+info.setVisible(true);
+// TODO add your handling code here:
+    }//GEN-LAST:event_DinnerButtonActionPerformed
 
 
     
@@ -149,6 +164,7 @@ Info.setVisible(true);
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new MenuPrompt().setVisible(true);
             }
