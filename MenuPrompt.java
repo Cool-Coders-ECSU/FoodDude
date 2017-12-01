@@ -20,11 +20,7 @@ import javax.swing.JOptionPane;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 /**
  *
@@ -91,6 +87,11 @@ public class MenuPrompt extends javax.swing.JFrame {
         LunchButton.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
         LunchButton.setForeground(new java.awt.Color(204, 0, 51));
         LunchButton.setText("Lunch");
+        LunchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LunchButtonActionPerformed(evt);
+            }
+        });
         getContentPane().add(LunchButton);
         LunchButton.setBounds(380, 190, 140, 30);
 
@@ -106,7 +107,7 @@ public class MenuPrompt extends javax.swing.JFrame {
         DinnerButton.setBounds(240, 270, 140, 30);
 
         Tiitle.setFont(new java.awt.Font("Segoe UI", 3, 30)); // NOI18N
-        Tiitle.setForeground(new java.awt.Color(204, 0, 51));
+        Tiitle.setForeground(new java.awt.Color(255, 255, 0));
         Tiitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Tiitle.setText("Welcome to FoodDude!");
         getContentPane().add(Tiitle);
@@ -135,6 +136,11 @@ DinnerOrder info = new DinnerOrder();
 info.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_DinnerButtonActionPerformed
+
+    private void LunchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LunchButtonActionPerformed
+LunchOrder info = new LunchOrder();
+info.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_LunchButtonActionPerformed
 
 
     

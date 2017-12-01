@@ -1,7 +1,7 @@
+
 package food_dude;
 
 import java.awt.*;
-
 import java.awt.event.*;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -11,6 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.*;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+
+
 
 import javax.swing.*;
 import static javax.swing.Action.MNEMONIC_KEY;
@@ -18,24 +21,26 @@ import static javax.swing.Action.SHORT_DESCRIPTION;
 import javax.swing.text.NumberFormatter;
 
 
+public class LunchOrder extends javax.swing.JFrame {
 
-public class BreakfastMenu extends javax.swing.JFrame {
-    protected double entreePrice;
-    protected double drinkPrice;
-    protected double tax = 0.07;
-    protected double total;
-    protected double discount;
+    
+protected double entreePrice;
+protected double drinkPrice;
+protected double tax = 0.07;
+protected double total;
+protected double discount;
 
 Connection connect = null;
 PreparedStatement pst = null;
 ResultSet rs = null;
 
-
-
-
-    public BreakfastMenu() {
+    public LunchOrder() {
         initComponents();
-        jScrollPane1.getViewport().setOpaque(false);
+      
+
+
+
+ jScrollPane1.getViewport().setOpaque(false);
         jScrollPane1.setBorder(null);
         jScrollPane1.setViewportBorder(null);
         
@@ -48,56 +53,33 @@ ResultSet rs = null;
         
         
         drinkDescription.setBorder(null);
-        
+
     }
+
+    
+    
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Entree = new javax.swing.JComboBox();
-        addButton = new javax.swing.JButton();
         WaitressButton = new javax.swing.JButton();
-        DrinkCombo = new javax.swing.JComboBox();
         exitButton = new javax.swing.JButton();
         Title = new javax.swing.JLabel();
         EntreeTitle = new javax.swing.JLabel();
+        addButton = new javax.swing.JButton();
         DrinkTitle = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        picDescription = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         drinkDescription = new javax.swing.JTextArea();
+        Entree = new javax.swing.JComboBox();
+        DrinkCombo = new javax.swing.JComboBox();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        picDescription = new javax.swing.JTextArea();
         Background = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
-        setMinimumSize(new java.awt.Dimension(480, 480));
+        setMinimumSize(new java.awt.Dimension(500, 380));
         getContentPane().setLayout(null);
-
-        Entree.setMaximumRowCount(14);
-        Entree.setModel(practice());
-        Entree.setAutoscrolls(true);
-        Entree.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true), null));
-        Entree.setMinimumSize(new java.awt.Dimension(89, 42));
-        Entree.setPreferredSize(new java.awt.Dimension(200, 28));
-        Entree.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EntreeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(Entree);
-        Entree.setBounds(60, 190, 250, 210);
-
-        addButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        addButton.setText("Done");
-        addButton.setPreferredSize(new java.awt.Dimension(153, 37));
-        addButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addButtonActionPerformed(evt);
-            }
-        });
-        getContentPane().add(addButton);
-        addButton.setBounds(660, 20, 100, 30);
 
         WaitressButton.setFont(new java.awt.Font("Segoe UI Black", 1, 12)); // NOI18N
         WaitressButton.setForeground(new java.awt.Color(204, 0, 51));
@@ -111,16 +93,6 @@ ResultSet rs = null;
         });
         getContentPane().add(WaitressButton);
         WaitressButton.setBounds(630, 90, 140, 37);
-
-        DrinkCombo.setModel(practice2());
-        DrinkCombo.setBorder(null);
-        DrinkCombo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DrinkComboActionPerformed(evt);
-            }
-        });
-        getContentPane().add(DrinkCombo);
-        DrinkCombo.setBounds(430, 190, 240, 210);
 
         exitButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         exitButton.setText("Back");
@@ -136,7 +108,7 @@ ResultSet rs = null;
         Title.setFont(new java.awt.Font("Segoe UI Black", 1, 36)); // NOI18N
         Title.setForeground(new java.awt.Color(255, 255, 0));
         Title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Title.setText("Breakfast Menu:");
+        Title.setText("Lunch Menu:");
         getContentPane().add(Title);
         Title.setBounds(200, 20, 390, 60);
 
@@ -147,12 +119,59 @@ ResultSet rs = null;
         getContentPane().add(EntreeTitle);
         EntreeTitle.setBounds(60, 150, 180, 40);
 
+        addButton.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        addButton.setText("Done");
+        addButton.setPreferredSize(new java.awt.Dimension(153, 37));
+        addButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(addButton);
+        addButton.setBounds(660, 20, 100, 30);
+
         DrinkTitle.setFont(new java.awt.Font("Segoe UI", 3, 22)); // NOI18N
         DrinkTitle.setForeground(new java.awt.Color(255, 255, 0));
         DrinkTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         DrinkTitle.setText("DRINKS");
         getContentPane().add(DrinkTitle);
         DrinkTitle.setBounds(400, 150, 220, 30);
+
+        drinkDescription.setBackground(new Color(0,0,0,64));
+        drinkDescription.setColumns(20);
+        drinkDescription.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
+        drinkDescription.setForeground(new java.awt.Color(255, 255, 51));
+        drinkDescription.setLineWrap(true);
+        drinkDescription.setRows(5);
+        drinkDescription.setOpaque(false);
+        jScrollPane2.setViewportView(drinkDescription);
+
+        getContentPane().add(jScrollPane2);
+        jScrollPane2.setBounds(430, 430, 240, 80);
+
+        Entree.setMaximumRowCount(14);
+        Entree.setModel(practice());
+        Entree.setAutoscrolls(true);
+        Entree.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 0, 0), 2, true), null));
+        Entree.setMinimumSize(new java.awt.Dimension(89, 42));
+        Entree.setPreferredSize(new java.awt.Dimension(200, 28));
+        Entree.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EntreeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(Entree);
+        Entree.setBounds(60, 190, 250, 210);
+
+        DrinkCombo.setModel(practice2());
+        DrinkCombo.setBorder(null);
+        DrinkCombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DrinkComboActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DrinkCombo);
+        DrinkCombo.setBounds(430, 190, 240, 210);
 
         jScrollPane1.setOpaque(false);
 
@@ -169,18 +188,6 @@ ResultSet rs = null;
 
         getContentPane().add(jScrollPane1);
         jScrollPane1.setBounds(50, 430, 260, 80);
-
-        drinkDescription.setBackground(new Color(0,0,0,64));
-        drinkDescription.setColumns(20);
-        drinkDescription.setFont(new java.awt.Font("Segoe UI Emoji", 1, 14)); // NOI18N
-        drinkDescription.setForeground(new java.awt.Color(255, 255, 51));
-        drinkDescription.setLineWrap(true);
-        drinkDescription.setRows(5);
-        drinkDescription.setOpaque(false);
-        jScrollPane2.setViewportView(drinkDescription);
-
-        getContentPane().add(jScrollPane2);
-        jScrollPane2.setBounds(430, 430, 240, 80);
 
         Background.setBackground(new java.awt.Color(0, 0, 255));
         Background.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -200,8 +207,18 @@ ResultSet rs = null;
         JOptionPane.showMessageDialog(null," A waitress is on the way!");        // TODO add your handling code here:
     }//GEN-LAST:event_WaitressButtonActionPerformed
 
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+
+        dispose();
+        new MenuPrompt().setVisible(true);
+        
+    }//GEN-LAST:event_exitButtonActionPerformed
+
     private void addButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addButtonActionPerformed
-       double sum;
+        
+
+
+        double sum;
         sum = (entreePrice + drinkPrice) * tax;
         total = sum + entreePrice + drinkPrice;
         double t1 = total;
@@ -217,7 +234,7 @@ ResultSet rs = null;
                 try{
                     String val1 = picDescription.getText();
                     String val2 = drinkDescription.getText();
-                    String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new java.util.Date());
+                    String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
                     Class.forName("org.sqlite.JDBC");
                     
                      
@@ -229,6 +246,10 @@ ResultSet rs = null;
                 pst.setString(2, val2);
                 pst.setString(3, timeStamp);
                 pst.executeUpdate();
+                
+                
+                   
+                    
                 
                     JOptionPane.showMessageDialog(null,"Thanks, Your order will be out shortly!");
                 }
@@ -242,96 +263,84 @@ ResultSet rs = null;
 
         else
         {}
-        
     }//GEN-LAST:event_addButtonActionPerformed
 
     private void EntreeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EntreeActionPerformed
-    if(Entree.getSelectedIndex()==0)
+        if(Entree.getSelectedIndex()==0)
         { picDescription.setText("");
-        entreePrice = 0.00;  
+            entreePrice = 0.00;
         } else if(Entree.getSelectedIndex()==1)
-        { picDescription.setText("Scramble eggs with cheese, french toast & pork bacon - $5.67");
-        entreePrice = 5.67;       
+        { picDescription.setText("Caesar - $4.67");
+            entreePrice = 4.67;
         } else if(Entree.getSelectedIndex()==2)
-        { picDescription.setText("Buttermilk pancakes, sausage patty & whole egg - $6.99");
-        entreePrice = 6.99;
+        { picDescription.setText("Cheese Burger and Fries - $5.99");
+            entreePrice = 5.99;
         } else if(Entree.getSelectedIndex()==3)
-        { picDescription.setText("Sausage and cheese omlette with side of tomatoes - $4.99");
-        entreePrice = 4.99;
+        { picDescription.setText("Traditional Wings & Fries - $5.99");
+            entreePrice = 5.99;
         }
-        
 
     }//GEN-LAST:event_EntreeActionPerformed
-
-    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
-
-        dispose();
-        new MenuPrompt().setVisible(true);
-       
-    }//GEN-LAST:event_exitButtonActionPerformed
 
     private void DrinkComboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DrinkComboActionPerformed
         if(DrinkCombo.getSelectedIndex()==0)
         { drinkDescription.setText("");
-        drinkPrice = 0.00;}
+            drinkPrice = 0.00;}
         else if(DrinkCombo.getSelectedIndex()==1)
-        { drinkDescription.setText("Pink Lemonade $1.07");
-        drinkPrice = 1.07;
+        { drinkDescription.setText("Dr Pepper - $1.07");
+            drinkPrice = 1.07;
         } else if(DrinkCombo.getSelectedIndex()==2)
-        { drinkDescription.setText("Lemonade $1.07");
-        drinkPrice = 1.07;
+        { drinkDescription.setText("Pepsi - $1.07");
+            drinkPrice = 1.07;
         } else if(DrinkCombo.getSelectedIndex()==3)
-        { drinkDescription.setText("Apple Juice - $1.07");
-        drinkPrice = 1.07;
+        { drinkDescription.setText("Coca Cola - $1.07");
+            drinkPrice = 1.07;
         }
     }//GEN-LAST:event_DrinkComboActionPerformed
-protected DefaultComboBoxModel<Icon> practice()      
+
+    protected DefaultComboBoxModel<Icon> practice()      
 {
-    
     DefaultComboBoxModel<Icon> d = new DefaultComboBoxModel<Icon>();
-    
+   
     ImageIcon b0 = new ImageIcon("NONE");
     d.addElement(b0);
-    ImageIcon b1 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\breakfast1.png");
+    ImageIcon b1 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\lunch.jpg");
     d.addElement(b1);
-    ImageIcon b2 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\breakfast2.png");
+    ImageIcon b2 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\burger.jpg");
    d.addElement(b2);
-   ImageIcon b3 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\breakfast3n.png");
+   ImageIcon b3 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\wings.jpg");
     d.addElement(b3);
+    
     return d;
 }
 
-                                        
-protected DefaultComboBoxModel<Icon> practice2()      
+    
+    protected DefaultComboBoxModel<Icon> practice2()      
 {
-    
     DefaultComboBoxModel<Icon> d = new DefaultComboBoxModel<Icon>();
-    
-    ImageIcon[] image;
-    //String[] entree = {"breakfas1","breakfast2"};
+
     ImageIcon drink = new ImageIcon("NONE");
     d.addElement(drink);
-    ImageIcon drink1 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\newdrink.jpg");
+    ImageIcon drink1 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\drpepper.png");
     d.addElement(drink1);
-    ImageIcon drink2 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\newdrink2.png");
+    ImageIcon drink2 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\drpepper.png");
    d.addElement(drink2);
-   ImageIcon drink3 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\newdrink3.png");
+   ImageIcon drink3 = new ImageIcon("C:\\Users\\drcouncil\\Documents\\NetBeansProjects\\FoodDude\\src\\food_dude\\drpepper.png");
     d.addElement(drink3);
+    
     return d;
 }
 
+
+
+
+
+
+
+
     
-     
-    
-    
-    
-    
-    
-    
-    
-   
     public static void main(String args[]) {
-       
+        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -340,20 +349,20 @@ protected DefaultComboBoxModel<Icon> practice2()
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BreakfastMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LunchOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BreakfastMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LunchOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BreakfastMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LunchOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BreakfastMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LunchOrder.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
+        
 
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BreakfastMenu().setVisible(true);
+                new LunchOrder().setVisible(true);
             }
         });
     }
@@ -373,8 +382,4 @@ protected DefaultComboBoxModel<Icon> practice2()
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea picDescription;
     // End of variables declaration//GEN-END:variables
-
-    private void add(String[] entree, String PAGE_START) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }
